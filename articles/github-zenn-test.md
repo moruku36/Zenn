@@ -7,3 +7,4 @@ published: true
 ---
 
 from repository post test.
+add new text 

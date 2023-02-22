@@ -1,7 +1,8 @@
 # Zenn
-Zenn articles
-Update
+Zenn article　Update　　
+
 $ npm install zenn-cli@latest
 
-Create new article
+Create new article　　
+
 $ npx zenn new:article

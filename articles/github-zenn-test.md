@@ -1,8 +1,8 @@
 ---
-title: ZennをGithubからDeployしてみる
+title: アーキテクトとしてのIT技術との関り方
 emoji: 😸
-type: tech
-topics: [Zenn, Github, Deploy, CLI]
+type: idea
+topics: [Cloud, Architect, Engineering]
 published: true
 ---
 

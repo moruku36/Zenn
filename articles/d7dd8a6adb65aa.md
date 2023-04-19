@@ -3,7 +3,7 @@ title: "Azure Light Houseってなに？なにができるの？"
 emoji: "😺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Azure, Lighthouse, AzureAD]
-published: false
+published: true
 ---
 
 # 記事の背景

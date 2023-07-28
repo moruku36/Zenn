@@ -3,7 +3,7 @@ title: "Azure Boost のメリットとは？"
 emoji: "😎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Azure, Azure Boost, Microsoft, AWS ]
-published:true
+published: true
 ---
 
 Azure Boost のメリットとは？

@@ -17,7 +17,6 @@ https://openai.com/blog/chatgpt-can-now-see-hear-and-speak
 
 https://learn.microsoft.com/ja-jp/azure/playwright-testing/overview-what-is-microsoft-playwright-testing
 
-![Alt text](image.png)
 
 構成図の内容を詳しく解説してくれました。  
 ドキュメントを参照させていることもありますが、構成図の内容について詳しく説明してくれています。
@@ -28,7 +27,6 @@ https://learn.microsoft.com/ja-jp/azure/playwright-testing/overview-what-is-micr
 
 https://www.cs.purdue.edu/homes/csjgwang/CloudNativeDB/AzureStorageSOSP11.pdf
 
-![Alt text](image-1.png)
 
 WAS (Windows Azure Storage)について
 各線上に指示している内容を中心に解説してくれています。

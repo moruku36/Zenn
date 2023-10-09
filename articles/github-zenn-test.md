@@ -1,5 +1,5 @@
 ---
-title: "エンジニア向けのChatGPT-4V画像認識機能を使ってみる"
+title: "エンジニア向けにChatGPT-4V画像認識機能を使ってみる"
 emoji: "😸"
 type: "tech"
 topics: [ChatGPT, AI, Engineering, Cloud]

@@ -2,7 +2,7 @@
 title: "エンジニア向けにChatGPT-4V画像認識機能を使ってみる"
 emoji: "😸"
 type: "tech"
-topics: [ChatGPT, AI, Cloud]
+topics: [ChatGPT, AI, Cloud, OpenAI]
 published: true
 ---
 # はじめに

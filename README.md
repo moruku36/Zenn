@@ -1,8 +1,21 @@
-# Zenn
-Zenn article　Update　　
+# Zenn Articles and Books
 
-$ npm install zenn-cli@latest
+[English](README.md) | [日本語](README.ja.md)
 
-Create new article　　
+Source files for Zenn articles and books, with images and Zenn CLI configuration for authoring and previewing content.
 
-$ npx zenn new:article
+## Author content
+
+```bash
+npm install zenn-cli@latest
+npx zenn new:article
+```
+
+Articles, books, and images are organized in their corresponding directories.
+
+
+## Contents
+
+- [articles/](articles)
+- [books/](books)
+- [images/](images)

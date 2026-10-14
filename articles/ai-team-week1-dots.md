@@ -2,7 +2,7 @@
 title: "AIチームを7日間マネジメントして分かったこと"
 emoji: "🤖"
 type: "idea"
-topics: ["ai", "chatgpt", "codex", "開発効率", "振り返り"]
+topics: ["ai", "chatgpt", "codex", "aiエージェント", "振り返り"]
 published: true
 ---
 

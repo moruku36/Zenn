@@ -3,8 +3,10 @@ title: "Geminiのスケジュール設定を使った技術情報の集め方"
 emoji: "📚"
 type: "idea"
 topics: ["gemini", "ai", "情報収集", "クラウド", "セキュリティ"]
-published: false
+published: true
 ---
+
+![Gemini 4 Argon](https://static.zenn.studio/user-upload/6fec6da5d51b-20261014.png)
 
 AI、クラウド、セキュリティについて調べていると、論文や公式の更新情報、技術ブログなど、読みたいものが次々に出てきます。それぞれ知りたいことが違うので、一つの一覧にまとめるだけでは、どれを詳しく読むか選びにくいところがあります。
 

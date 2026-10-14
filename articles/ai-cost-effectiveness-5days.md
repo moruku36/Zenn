@@ -2,7 +2,7 @@
 title: "AIの費用対効果を、5日間の作業記録から見積もる"
 emoji: "🧮"
 type: "idea"
-topics: ["ai", "生成ai", "業務効率化"]
+topics: ["ai", "生成ai", "業務効率化", "費用対効果"]
 published: true
 ---
 

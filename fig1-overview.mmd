@@ -1,0 +1,31 @@
+flowchart TB
+  accTitle: Muse Secure VM の全体構成
+  accDescr: 利用者のクライアントアプリが、利用者ごとのLinux仮想マシンに接続する。仮想マシンの中は、エージェントが動く実行セルと、安全部品が置かれるホスト側ドメインに分かれる。外への通信とコネクタ操作はすべてホスト側のSentinelを通る。色分けは、青が利用者、緑が実行セル、赤・橙がホスト側の安全部品、紫が外部サービス。
+  user["利用者<br/>iOS / Web / Mac / WhatsApp"]:::user
+  subgraph vm["Muse Secure VM（利用者ごとに1台のLinux VM）"]
+    subgraph cell["実行セル（systemd-nspawn）"]
+      agent["Muse エージェント<br/>Muse Spark 1.3"]:::cell
+      browser["ブラウザー<br/>Chromium"]:::cell
+      tools["ツール / コネクタCLI<br/>引数の解析のみ"]:::cell
+    end
+    subgraph host["ホスト側ドメイン（セルの外）"]
+      sentinel["Sentinel<br/>許可の唯一の権限者"]:::sec
+      authd["hatch-authd<br/>資格情報の保管"]:::host
+      safety["hatch-safety<br/>分類器アンサンブル"]:::host
+      privsep["Privsep ワーカー<br/>コネクタの実処理"]:::host
+    end
+  end
+  ext["外部サービス<br/>メール / カレンダー / 買い物 / Web"]:::ext
+  user -->|"依頼と承認"| vm
+  agent --> tools
+  agent --> browser
+  tools -.->|"Unixソケット"| privsep
+  agent -.->|"操作の提案"| sentinel
+  sentinel -->|"許可された通信だけ"| ext
+  authd -.->|"送信直前に本物を差し替え"| sentinel
+  safety -.->|"入出力を検査"| agent
+  classDef user fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+  classDef cell fill:#dcfce7,stroke:#16a34a,color:#14532d
+  classDef sec fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+  classDef host fill:#ffedd5,stroke:#ea580c,color:#7c2d12
+  classDef ext fill:#ede9fe,stroke:#7c3aed,color:#4c1d95

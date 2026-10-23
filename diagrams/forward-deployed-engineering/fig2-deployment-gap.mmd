@@ -1,0 +1,22 @@
+flowchart LR
+  accTitle: 導入ギャップと FDE の位置
+  accDescr: モデルの能力と業務成果のあいだに、データ連携、業務の暗黙知、評価、権限と監視、組織の定着という導入ギャップがあり、FDE がそこを埋める。現場で得た学びは製品と研究に戻り、次の顧客では標準機能になる。
+  model["フロンティアモデルの能力<br/>推論・ツール利用・コード生成"]
+  gap["導入ギャップ<br/>（ここで 95% のパイロットが止まる）<br/>────────<br/>・分散したデータとレガシー<br/>・業務の暗黙知、例外処理<br/>・品質評価と人のレビュー<br/>・権限・監視・責任分担<br/>・現場への定着"]
+  value["測定できる業務成果<br/>処理時間・品質・売上・コスト"]
+  fde(["FDE<br/>顧客の現場に入り<br/>本番まで作り切る"])
+  rnd["製品・研究チーム<br/>再利用可能な機能へ"]
+  model --> gap --> value
+  fde ==>|"埋める"| gap
+  fde -.->|"現場の学びを還元"| rnd
+  rnd -.->|"次の顧客では標準機能に"| model
+  classDef cap fill:#e3ecfb,stroke:#3b6fd4,color:#16305f
+  classDef gapc fill:#fdecea,stroke:#d9534f,color:#6b1d1a
+  classDef val fill:#e5f5ea,stroke:#2e9b57,color:#14492a
+  classDef fdec fill:#fff3d6,stroke:#e0a100,color:#5c4200
+  classDef rndc fill:#efe7fb,stroke:#7b52c9,color:#33205a
+  class model cap
+  class gap gapc
+  class value val
+  class fde fdec
+  class rnd rndc

@@ -1,0 +1,17 @@
+flowchart TB
+  accTitle: Palantir の FDE と製品開発の循環
+  accDescr: FDE が顧客の現場で手早く解決し、製品開発チームがそれを一般化して Foundry や AIP の機能にする。次の顧客ではより速く安く導入でき、ライセンス収入が積み上がる。
+  a["① 顧客の現場に常駐<br/>Echo（戦略）＋ Delta（エンジニア）"]
+  b["② まず素早く解決<br/>多少粗くても動かす"]
+  c["③ 製品開発チームが整え直す<br/>Magritte・Contour・Workshop など"]
+  d["④ Foundry / AIP の標準機能に"]
+  e["⑤ 次の顧客はより速く・安く<br/>Bootcamp は数日で稼働"]
+  f["⑥ 契約が広がる<br/>ソフトウェアの利用料が入る"]
+  a --> b --> c --> d --> e --> f
+  f -.->|"利益を次の現場に投資"| a
+  classDef field fill:#fff3d6,stroke:#e0a100,color:#5c4200
+  classDef prod fill:#efe7fb,stroke:#7b52c9,color:#33205a
+  classDef money fill:#e5f5ea,stroke:#2e9b57,color:#14492a
+  class a,b field
+  class c,d prod
+  class e,f money

@@ -1,0 +1,24 @@
+flowchart TB
+  accTitle: OpenAI の FDE プロジェクトの5段階
+  accDescr: 成果の定義から始まり、課題探索、試作、検証、本番稼働、展開の5段階で進む。各段階の学びは OpenAI の製品と研究に戻り、展開段階ではパートナーに引き継ぐ。
+  goal(["成果の定義<br/>コスト・時間・顧客体験・売上"])
+  p1["1. 課題探索<br/>影響の大きい業務と<br/>阻害要因を特定"]
+  p2["2. 試作<br/>顧客のデータ・システムで<br/>要の仕組みを構築"]
+  p3["3. 検証<br/>代表タスクと例外ケースを評価<br/>人のレビューを組み込む"]
+  p4["4. 本番稼働<br/>権限・監視・責任分担"]
+  p5["5. 展開<br/>再利用可能な機能にして<br/>チーム・パートナーへ"]
+  rnd["OpenAI 製品・研究チーム<br/>Presence / Context Layer / Codex"]
+  partner["DeployCo・SI パートナー<br/>継続支援と横展開"]
+  goal --> p1 --> p2 --> p3 --> p4 --> p5
+  p2 -.->|"モデルの限界を報告"| rnd
+  p3 -.-> rnd
+  rnd -.->|"新機能・改善"| p2
+  p5 --> partner
+  classDef g fill:#e5f5ea,stroke:#2e9b57,color:#14492a
+  classDef s fill:#e3ecfb,stroke:#3b6fd4,color:#16305f
+  classDef r fill:#efe7fb,stroke:#7b52c9,color:#33205a
+  classDef pt fill:#fff3d6,stroke:#e0a100,color:#5c4200
+  class goal g
+  class p1,p2,p3,p4,p5 s
+  class rnd r
+  class partner pt

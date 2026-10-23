@@ -1,0 +1,23 @@
+flowchart LR
+  accTitle: DeployCo と Ode のお金の流れ
+  accDescr: AI ラボと PE ファンドが導入会社に出資する。PE は投資先企業を顧客として紹介する。顧客は導入会社に支援料を払い、本番稼働後はモデル利用料が AI ラボに流れる。現場の学びはモデルと製品の改善に戻る。
+  lab["AI ラボ<br/>OpenAI / Anthropic<br/>過半数支配・技術提供"]
+  pe["PE・投資銀行・コンサル<br/>TPG・Blackstone・Goldman ほか"]
+  co["導入会社<br/>DeployCo（40億ドル超）<br/>Ode（15億ドル）"]
+  cust["顧客企業<br/>PE 投資先 2,000社超 ＋ 一般企業"]
+  lab -->|"出資・人材・モデル"| co
+  pe -->|"出資"| co
+  pe -.->|"投資先を紹介"| cust
+  co ==>|"FDE が常駐し本番化"| cust
+  cust -->|"導入支援料"| co
+  cust ==>|"API・ChatGPT Enterprise・Claude の利用料"| lab
+  co -.->|"現場の学び"| lab
+  co -->|"リターン"| pe
+  classDef l fill:#e3ecfb,stroke:#3b6fd4,color:#16305f
+  classDef p fill:#f1f1f1,stroke:#777,color:#222
+  classDef c fill:#fff3d6,stroke:#e0a100,color:#5c4200
+  classDef u fill:#e5f5ea,stroke:#2e9b57,color:#14492a
+  class lab l
+  class pe p
+  class co c
+  class cust u

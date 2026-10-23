@@ -1,0 +1,16 @@
+flowchart LR
+  accTitle: 人月受託と FDE 型の違い
+  accDescr: 人月受託は IT 部門が要件を出し、SIer が多人数で作って納品し、工数で請求する。FDE 型は事業部門や経営層と課題を探し、少人数が AI を使って短いサイクルで作り、固定価格や成果で請求し、定着まで伴走する。
+  subgraph old["従来の人月受託"]
+    direction TB
+    o1["IT 部門が要件定義"] --> o2["多人数で設計・開発"] --> o3["納品・検収"] --> o4["料金＝人数 × 期間"]
+  end
+  subgraph new["FDE 型"]
+    direction TB
+    n1["経営層・事業部門と<br/>課題そのものを探す"] --> n2["3〜5人が AI を使い<br/>短いサイクルで試作"] --> n3["本番稼働・定着まで寄り添う"] --> n4["料金＝固定の金額・成果に応じた額<br/>＋ 製品や AI の利用料"]
+  end
+  old ==>|"生成 AI で作る手間が減り<br/>作業時間で稼ぐ前提が変わる"| new
+  classDef o fill:#f1f1f1,stroke:#888,color:#333
+  classDef n fill:#e5f5ea,stroke:#2e9b57,color:#14492a
+  class o1,o2,o3,o4 o
+  class n1,n2,n3,n4 n

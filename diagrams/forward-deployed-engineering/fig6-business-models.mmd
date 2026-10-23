@@ -1,0 +1,21 @@
+flowchart TB
+  accTitle: FDE の3つのビジネスモデル
+  accDescr: 製品定着型は FDE をほぼ無償の先行投資にしてライセンスで回収する。AI ラボの導入会社型は導入支援料に加えてモデルとクラウドの従量課金で回収する。SI・コンサルの成果型は人月ではなく固定価格や成果連動の対価を目指す。
+  subgraph A["A. 製品定着型（Palantir・Salesforce）"]
+    direction TB
+    a1["FDE / Bootcamp<br/>短期・低額で始める"] --> a2["業務に組み込まれる"] --> a3["ソフトウェアのライセンス<br/>粗利 約80%台"]
+  end
+  subgraph B["B. AI ラボ・クラウドの導入会社型（OpenAI・Anthropic・Microsoft・AWS・Google）"]
+    direction TB
+    b1["導入会社が<br/>導入支援料を受け取る"] --> b2["本番ワークロードが稼働"] --> b3["API・トークン・<br/>クラウドの従量課金が積み上がる"]
+  end
+  subgraph C["C. SI・コンサルの成果型（日立・富士通・NTTデータ・Accenture）"]
+    direction TB
+    c1["少人数の FDE チーム<br/>3〜5人で1ユースケース"] --> c2["固定価格・成果連動<br/>脱・人月"] --> c3["パートナー製品の再販<br/>Palantir・Claude・Gemini など"]
+  end
+  classDef pa fill:#efe7fb,stroke:#7b52c9,color:#33205a
+  classDef pb fill:#e3ecfb,stroke:#3b6fd4,color:#16305f
+  classDef pc fill:#fff3d6,stroke:#e0a100,color:#5c4200
+  class a1,a2,a3 pa
+  class b1,b2,b3 pb
+  class c1,c2,c3 pc

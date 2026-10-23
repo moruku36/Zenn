@@ -1,0 +1,15 @@
+flowchart TB
+  accTitle: 両側の期待値で検査器そのものを検査する
+  accDescr: 同じスキャナーで弱点を残したVULNERABLEと対策済みのHARDENEDを検査する。VULNERABLEは6件FAIL、HARDENEDは6件PASSが期待値で、どちらかがずれたらCIを落とす。検出漏れはVULNERABLE側で、誤検知はHARDENED側で気づける。
+  s["同じスキャナー・同じ6検査"]
+  v["VULNERABLE を検査<br/>期待値：6件 FAIL<br/>HIGH 1 / MEDIUM 4 / LOW 1"]
+  h["HARDENED を検査<br/>期待値：6件 PASS<br/>findings 0"]
+  vm["FAILが減った<br/>＝検出漏れ・検査の故障"]
+  hm["PASSにならない<br/>＝誤検知・対策の後退"]
+  g["どちらかがずれたら<br/>CIを失敗にする"]
+  s --> v
+  s --> h
+  v -->|"ずれ"| vm
+  h -->|"ずれ"| hm
+  vm --> g
+  hm --> g

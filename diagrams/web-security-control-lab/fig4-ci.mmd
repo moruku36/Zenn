@@ -1,0 +1,14 @@
+flowchart TB
+  accTitle: CIの流れと evidence gate
+  accDescr: mainへのpushかプルリクエストで、Python 3.11のlintとテスト、3.12のテストが走る。ライブスキャンはテストが失敗しても実行し、両モードの検査、provenanceの記録、redaction確認、証跡のアップロードを行い、最後のevidence gateがすべて成功していなければ失敗にする。
+  t["main への push / PR"]
+  l["lint-and-test<br/>Ruff + pytest（3.11）"]
+  p["python-312-compat<br/>pytest（3.12）"]
+  s["live-security-scan<br/>テストが落ちても実行<br/>:8000 VULNERABLE を検査・照合<br/>:8001 HARDENED を検査・照合"]
+  e["provenance を記録<br/>許可リスト形式と<br/>秘密パターンで確認<br/>scan-evidence を7日保持"]
+  g["evidence gate<br/>全部成功しない限り失敗"]
+  t --> l
+  t --> p
+  l --> s
+  p --> s
+  s --> e --> g

@@ -1,0 +1,16 @@
+flowchart TB
+  accTitle: PASS・FAIL・ERRORと終了コードの決まり方
+  accDescr: 対象URLが許可リスト外なら送信前に終了コード2。health確認や合成ログインといった前提が確立できなければERRORで終了コード3。前提が揃えば各検査がPASSかFAILになり、レポートが完了すれば終了コード0。0はFAILを含みうる。
+  a["security-lab scan URL<br/>--expected-mode MODE"]
+  b{"URLは許可された<br/>ローカル対象か"}
+  c["拒否・終了コード 2<br/>リクエストは送らない"]
+  d{"前提を確立できたか<br/>/health のサービスとモード<br/>合成ログインと本人確認"}
+  e["該当検査は ERROR<br/>終了コード 3<br/>成功扱いにしない"]
+  f["各検査が PASS または FAIL<br/>レポート完了・終了コード 0"]
+  n["0 は「検査を完了した」<br/>FAILを含むことがある"]
+  a --> b
+  b -->|"いいえ"| c
+  b -->|"はい"| d
+  d -->|"いいえ"| e
+  d -->|"はい"| f
+  f --> n

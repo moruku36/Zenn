@@ -1,0 +1,13 @@
+flowchart TB
+  accTitle: Web Security Control Lab の全体構成
+  accDescr: 学習者のブラウザーやcurlと、ホスト側のスキャナーCLIが、ループバックのHTTPで同じFastAPIアプリに接続する。アプリは起動時のLAB_MODEでVULNERABLEかHARDENEDになり、SQLiteはアプリのプロセス内にある。CIは両モードを起動して期待値と照合する。
+  user["学習者<br/>ブラウザー / curl"]
+  scanner["security-lab scan<br/>ホスト側のCLI<br/>対象URLを送信前に検証"]
+  subgraph app["FastAPI アプリ（127.0.0.1 のみ）"]
+    mode["LAB_MODE<br/>VULNERABLE または HARDENED"]
+    db[("SQLite<br/>プロセス内・既定はメモリー")]
+  end
+  ci["GitHub Actions<br/>両モードを起動して照合"]
+  user -->|"ローカルHTTP"| app
+  scanner -->|"ローカルHTTP"| app
+  ci -.->|"同じCLIで検査"| scanner

@@ -3,7 +3,8 @@ title: "論文で読む AI×サイバーセキュリティ ── AIDB Meetup �
 emoji: "🛡️"
 type: "tech"
 topics: ["security", "ai", "llm", "aiagent", "cybersecurity"]
-published: false
+published: true
+published_at: 2026-10-23 18:00
 ---
 
 2026年10月22日、AIDB が主催する勉強会「AIDB Meetup『AI×サイバーセキュリティ』論文で学ぶ勉強会」に参加しました[^event]。登壇は AIDB 代表の水谷健氏で、攻撃と防御の両面で AI（特に LLM ベースのエージェント）がどこまで使われ、どこに限界があるのかを、最近の論文や公表事例をもとに整理する内容でした。

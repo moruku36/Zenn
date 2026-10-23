@@ -1,0 +1,13 @@
+flowchart TB
+  accTitle: テイントされた送信（Tainted Egress）の判定
+  accDescr: ツール実行は汚染されていない状態から始まる。利用者のデータを読むとカーネルレベルで印が付き、その印はプロセスの派生に伝わる。印のない狭い範囲の通信は自動で許可され得るが、印の付いた通信は自動では通らず、利用者の確認に回る。判定はモデルの自己申告ではなく、eBPFとLSMフックによる実際のデータの流れに基づく。色分けは、緑が汚染されていない状態、赤が汚染された状態と確認への分岐。
+  start["ツール実行の開始<br/>汚染されていない状態"]:::clean
+  read{"利用者のデータを<br/>読んだか"}
+  clean["汚染されていない通信<br/>狭い範囲なら自動許可も"]:::clean
+  taint["印が付く（tainted）<br/>eBPF / LSMで伝播"]:::taint
+  ask["自動では通さない<br/>利用者の確認へ"]:::taint
+  start --> read
+  read -->|"読んでいない"| clean
+  read -->|"読んだ"| taint --> ask
+  classDef clean fill:#dcfce7,stroke:#16a34a,color:#14532d
+  classDef taint fill:#fee2e2,stroke:#dc2626,color:#7f1d1d

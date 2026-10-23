@@ -1,0 +1,20 @@
+flowchart TB
+  accTitle: エージェントループと記憶の関係
+  accDescr: 利用者の依頼が文脈に組み立てられ、モデルが文章かツール呼び出しを選び、実行結果を見て次の一手を決める循環。長期の情報はファイルとしての記憶に置かれ、必要なものだけ検索して文脈に入れる。裏では定期ジョブが記憶整理や先回りの調査を行う。色分けは、青が利用者、緑がモデルとツール、黄が記憶、橙がバックグラウンド処理。
+  ask["利用者の依頼"]:::user
+  ctx["文脈の組み立て<br/>指示＋記憶の検索結果＋履歴"]
+  model["モデル（Muse Spark）<br/>次の一手を選ぶ"]:::cell
+  act{"文章で答える？<br/>ツールを使う？"}
+  tool["ツール実行<br/>シェル / ブラウザー / コネクタ"]:::cell
+  mem[("記憶ファイル<br/>MEMORY.md など")]:::mem
+  bg["バックグラウンド<br/>定期実行・記憶整理・調査"]:::host
+  ask --> ctx --> model --> act
+  act -->|"ツール"| tool --> ctx
+  act -->|"回答"| ask
+  mem -.->|"関連するものだけ"| ctx
+  model -.->|"残すべき学び"| mem
+  bg -.-> mem
+  classDef user fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+  classDef cell fill:#dcfce7,stroke:#16a34a,color:#14532d
+  classDef mem fill:#fef9c3,stroke:#ca8a04,color:#713f12
+  classDef host fill:#ffedd5,stroke:#ea580c,color:#7c2d12

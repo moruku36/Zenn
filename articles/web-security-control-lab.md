@@ -1,5 +1,5 @@
 ---
-title: "セキュリティ専任じゃなくても「対策が効いているか」は確かめられる ── 脆弱アプリと検査スキャナーで学ぶ Web Security Control Lab"
+title: "セキュリティ専任じゃなくても対策は確かめられる ── 脆弱アプリとスキャナーで学ぶ Web Security Control Lab"
 emoji: "🔐"
 type: "tech"
 topics: ["security", "python", "fastapi", "web", "初心者"]

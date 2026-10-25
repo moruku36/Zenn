@@ -53,7 +53,7 @@ Web アプリを作っていると、こんな場面が増えていないでし�
 
 ![学習者とホスト側スキャナーがローカルHTTPで1つのFastAPIアプリに接続し、SQLiteはアプリのプロセス内にある全体構成](/images/web-security-control-lab/wscl-architecture.png)
 
-*図1：全体構成。色分けは、青が学習者、緑がスキャナー、紫が対象アプリ、橙が起動手段、黄がデータ。図はリポジトリの Mermaid を編集元に Pele 1.8.0 で生成。*
+*図1：全体構成。学習者とスキャナーはローカル HTTP で対象アプリに接続し、SQLite はアプリのプロセス内にある。*
 
 | 要素 | 実体 | 備考 |
 | --- | --- | --- |
@@ -133,7 +133,7 @@ security-lab scan http://127.0.0.1:8001 --format json --expected-mode HARDENED
 
 ![ブラウザー側のCookie属性、サーバー側の権限確認・応答・記録という境界ごとに確認ポイントが分かれる概念図](/images/web-security-control-lab/wscl-boundaries.png)
 
-*図2：統制ごとに守る境界と確認ポイントが異なる。色分けは、青がブラウザー側、紫がサーバー側、緑がスキャナー、赤がこの検査では未確認の範囲。*
+*図2：統制ごとに守る境界と確認ポイントが異なる。スキャナーが観測できるのは決めた条件までで、実ブラウザーのクロスサイト動作や CSRF 対策全体の有効性は、この検査だけでは確認できない。*
 
 ## アプリ側の実装：対策はどこに書くのか
 
@@ -225,7 +225,7 @@ LAB-03 の条件も厳密です。対象は `lab_session` の `Set-Cookie` ヘ�
 
 ![起動、対象の検証、前提確認、六つの検査、期待値との比較までの検証フローと終了コード](/images/web-security-control-lab/wscl-verification-flow.png)
 
-*図3：検証フロー。前提を確立できなければ ERROR で終了し、成功扱いにしない。色分けは、緑がスキャナーの処理と HARDENED の期待値、橙が VULNERABLE の期待値、赤が異常終了（拒否・ERROR）。*
+*図3：検証フロー。対象を拒否した場合はリクエストを送らずに終了し、前提を確立できなければ ERROR で終了して、成功扱いにしない。*
 
 「検査ツールだから、どこを検査してもよい」わけではありません。対象の検証は Fail-Closed（疑わしければ止まる）です（[scanner/target.py](https://github.com/moruku36/web-security-control-lab/blob/4dc4d9dc1adfdf9cfcf07abf3593f04a5722d886/scanner/target.py)、[scanner/cli.py](https://github.com/moruku36/web-security-control-lab/blob/4dc4d9dc1adfdf9cfcf07abf3593f04a5722d886/scanner/cli.py)）。
 

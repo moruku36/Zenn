@@ -42,7 +42,7 @@ ConvexはTypeScriptでクエリ・ミューテーション・アクションを�
 ## 8. 選び方：作るもので決める
 作るものから逆引きすると選びやすいです。認証つきの普通のWebアプリを最速で作りたい場合はSupabase、SQLとPostgresの資産を活かしプレビュー環境を量産したい場合はNeonが候補になります。データの形が定まらない場合はMongoDB Atlas、主系DBは別にありキャッシュやレート制限を足したい場合はUpstash Redis、React・TypeScriptでリアルタイム同期したい場合はConvexが候補になります。
 
-![作るもので決めるDB選定フローチャート](https://static.zenn.studio/user-upload/35c8add60638-20261029.png)
+![作るもので決めるDB選定フローチャート](https://static.zenn.studio/user-upload/dae9965c44e8-20261029.png)
 
 AIに書かせる観点では、Postgresの型が欲しいか、ドキュメントの柔軟さが欲しいか、周辺機能まで一括で任せたいかを先に決めると手戻りが少ないです。要件が変われば組み合わせを変えれば良く、最初から一つに絞り込む必要はありません。
 
@@ -68,3 +68,7 @@ BaaSが欲しいか、Postgresを使い倒したいか、形の変わりやす�
 - https://upstash.com/pricing
 - https://www.convex.dev/pricing
 - https://docs.convex.dev/production/state/limits
+
+---
+
+P.S. この記事は、AIエージェントの Muse（フワッチ）と一緒に書きました。もし Muse を使ってみたくなったら、招待コード EOA1TR を入力してもらえると嬉しいです。https://muse.ai/join

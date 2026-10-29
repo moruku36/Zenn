@@ -27,24 +27,7 @@ published: false
 筆者の作品は「三要素チェック（Trifecta Checker）」です。AIエージェントの構成を読み取り、危険な組み合わせになっていないかを診断します。
 判定は LLM の気分に任せず、決定的なルールエンジンで行います。同じ入力なら必ず同じ判定になる、というのがこだわりです。
 案内役はキャラクターの Trafica です。公開デモはこちらです。https://meta-global-ai-hackathon-trifecta-c.vercel.app/
-```mermaid
-flowchart LR
-    A["You describe your agent<br/>type, voice, or file upload"] --> B["Muse Spark<br/>extraction"]
-    B --> C["Capability profile<br/>JSON"]
-    C --> D{"Deterministic rule engine<br/>trifecta_checker.py"}
-    D --> E["Verdict<br/>Low / Risky / Lethal"]
-    E --> F["Trafica explains<br/>Muse Spark"]
-    F --> G["Follow-ups<br/>split and re-check"]
-    G -.-> C
-    classDef input fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-    classDef llm fill:#dcfce7,stroke:#16a34a,color:#14532d
-    classDef engine fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
-    classDef neutral fill:#f3f4f6,stroke:#6b7280,color:#111827
-    class A input
-    class B,F llm
-    class C,G neutral
-    class D,E engine
-```
+![三要素チェックの仕組み](https://static.zenn.studio/user-upload/81fabf6be074-20261029.png)
 なお、判定はヒューリスティックな目安で、安全性を証明するものではありません。
 
 ## 5. まとめ

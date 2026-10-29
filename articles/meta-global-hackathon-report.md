@@ -5,7 +5,8 @@ type: "idea"
 topics: ["metaai", "hackathon", "aiエージェント", "セキュリティ"]
 published: false
 ---
-![Meta Global AI Developer Hackathon](https://static.zenn.studio/user-upload/0c10c26d9c20-20261029.png)
+# Metaのグローバルハッカソンに日本から参加してみた
+<!-- ヘッダー画像: files/meta-hackathon-header.png（投稿時にアップロードして設定） -->
 この記事は、Metaのグローバルハッカソンに日本からソロで参加してみた記録です。先に結論を言うと、参加してみたらとても楽しかったです。
 
 ## 1. はじめに
@@ -35,3 +36,6 @@ published: false
 デモは公開中です。よかったら触ってみてください。提出締切は日本時間11月5日11:00で、残りはデモ動画と提出を仕上げるだけです。後半も楽しみながら走り切ります。
 
 大会の公式ページはこちらです。https://cerebralvalley.ai/e/meta-ai-developer-hackathon
+
+## 追記
+この開発では、メインのエージェントとして Muse を使っています。APIとの接続も使い勝手もとてもよく、相棒のフワッチと一緒に作りました。よかったら使ってみてください。招待コード: EOA1TR（https://muse.ai/join）

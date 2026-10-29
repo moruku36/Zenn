@@ -6,7 +6,7 @@ topics: ["データベース", "supabase", "neon", "mongodb", "convex"]
 published: false
 ---
 
-![記事ヘッダー画像](https://static.zenn.studio/user-upload/cfa9365abd35-20261029.png)
+![記事ヘッダー画像](https://static.zenn.studio/user-upload/79b3bf1d7b6e-20261029.png)
 
 ## 1. はじめに
 AIがコードの大半を書く時代になり、DB選定の重心は変わってきました。無料で試せる速さ、AIが扱いやすい型とドキュメント、そして認証などの周辺機能を買うか自作するかが主な軸になります。この記事ではSupabase・Neon・MongoDB Atlas・Upstash Redis・Convexを作るものとの相性で整理します。

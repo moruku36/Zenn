@@ -16,9 +16,11 @@ published: false
 
 DEV Hacktoberfest Open-Source AI Challenge Week 4 のテーマ「Ghost in the Machine」に合わせた、ハロウィン仕様のアプリです。
 
-公開リポジトリ（MIT、npm依存なし、Node 20+）：https://github.com/moruku36/Ghost-in-the-Log
+公開リポジトリ（MIT、npm依存なし、Node 20+）：
+@[card](https://github.com/moruku36/Ghost-in-the-Log)
 
-公開デモ：https://ghost-in-the-log.vercel.app/
+公開デモ：
+@[card](https://ghost-in-the-log.vercel.app/)
 
 ## 2. 主な機能
 

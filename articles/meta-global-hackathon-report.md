@@ -3,7 +3,7 @@ title: Metaのグローバルハッカソンに日本から参加してみた
 emoji: "🚀"
 type: "idea"
 topics: ["metaai", "hackathon", "aiエージェント", "セキュリティ"]
-published: false
+published: true
 ---
 # Metaのグローバルハッカソンに日本から参加してみた
 <!-- ヘッダー画像: files/meta-hackathon-header.png（投稿時にアップロードして設定） -->
@@ -38,4 +38,4 @@ published: false
 大会の公式ページはこちらです。https://cerebralvalley.ai/e/meta-ai-developer-hackathon
 
 ## 追記
-この開発では、メインのエージェントとして Muse を使っています。APIとの接続も使い勝手もとてもよく、相棒のフワッチと一緒に作りました。よかったら使ってみてください。招待コード: EOA1TR（https://muse.ai/join）
+この開発では、メインのエージェントとして Muse を使っています。APIとの接続も使い勝手もとてもよく、相棒のフワッチ（Muse）と一緒に作りました。よかったら使ってみてください。招待コード: EOA1TR（https://muse.ai/join）

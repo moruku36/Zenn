@@ -82,3 +82,4 @@ Voice Mode は [Gemini Live](https://antigravity.google/docs/voice-mode) を使�
 軸は2つです。実行場所がクラウドへ移る「非同期化」と、入力が声へ広がる「ハンズフリー化」です。
 
 エージェントは「席にいる間だけ働く道具」から「預けておける相手」に近づきました。
+

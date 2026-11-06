@@ -3,7 +3,7 @@ title: "Sakura AI Engineを無償プランで検証した：3モデルに同じ3
 emoji: "🌸"
 type: "tech"
 topics: ["sakura", "ai", "llm"]
-published: false
+published: true
 ---
 
 ![さくらインターネット ロゴ](/images/sakura-ai-engine-verification/sakura-internet-logo.jpg)

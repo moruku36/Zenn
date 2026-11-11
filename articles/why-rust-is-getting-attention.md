@@ -8,6 +8,8 @@ published: false
 
 # なぜ今、Rustが注目されるのか：言語の歴史、Pythonとの関係、AI基盤の事例から
 
+![Rust](/images/why-rust-is-getting-attention/header.png)
+
 調査日：2026年11月11日
 
 ## 1. はじめに

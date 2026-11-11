@@ -3,7 +3,7 @@ title: "MetaのAIハッカソンが終わった。5,367作品の頂点と、入�
 emoji: "🏆"
 type: "tech"
 topics: ["ai", "ハッカソン", "meta", "llama"]
-published: false
+published: true
 ---
 
 # MetaのAIハッカソンが終わった。5,367作品の頂点と、入賞を逃した自分の気づき

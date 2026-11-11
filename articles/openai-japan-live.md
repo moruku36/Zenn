@@ -3,7 +3,7 @@ title: "OpenAI Japan Liveで新モデルと開発自動化の今をつかむ"
 emoji: "🤖"
 type: "tech"
 topics: ["openai", "codex", "ai", "セキュリティ"]
-published: false
+published: true
 ---
 
 OpenAI Japan Live（2026年11月11日、オンライン）を視聴し、モデル群と防御、開発自動化、移行の要点を整理しました。

@@ -152,9 +152,6 @@ Community Voteはまだ確定しておらず、変更の可能性があります
 
 ## 参照
 
-クロージング録画（Vimeo）  
-https://vimeo.com/1245287583
-
 受賞作の公式ギャラリーページ（Cerebral Valley）
 
 - ControlAnything: https://cerebralvalley.ai/e/meta-ai-developer-hackathon/hackathon/gallery/3441

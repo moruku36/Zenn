@@ -7,6 +7,8 @@ published: false
 ---
 # Gemini 4 CarbonとHydrogenが来た週：AntigravityのOrchestratorと/swarmを整理する
 
+![Gemini 4 Carbon](/images/gemini-4-carbon-hydrogen/header.png)
+
 ## 1. はじめに
 
 AIエージェントに重い作業を任せようとすると、賢いモデルは遅くて利用枠を消費し、速いモデルは肝心なところで詰まる、という場面によく出会います。

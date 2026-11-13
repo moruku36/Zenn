@@ -81,8 +81,17 @@ ChatGPT側のAIエージェントの提案で経路を変え、Codexのサブス
 
 境界を一つずつ決め、成功した範囲だけを記録しました。運用はまだ途中ですが、進め方は見えてきました。
 
+## 今後の展望
+
+11月13日にNVIDIAのセミナーでOpenShellを知りました。OpenShellは、NVIDIAのエージェント向け設計集NemoClawに含まれる実行基盤です。ポリシーでエージェントの動きを制御し、サンドボックス内で動かします。NemoClawには、OpenClawのエージェントをそのまま動かすためのブループリントも用意されています。
+
+現在のOpenClawの運用では、設定と運用上のルールで境界を保っています。ここにOpenShellを組み合わせれば、実行基盤側で境界を強制できる可能性があります。エンタープライズレベルの安全性を備えたAI AgentのOSSを目指し、今後の実装予定に加えました。
+
+まだ構想段階で、検証はこれからです。
+
 ## 参照
 - 11月6日 OpenClaw／クロッチ導入・検証記録 https://github.com/moruku36/home-ai-engineering-lab/blob/main/docs/openclaw-status-2026-11-06.ja.md
 - 11月8日 ホームラボとクロッチの構築レポート https://github.com/moruku36/home-ai-engineering-lab/blob/main/docs/home-lab-kurotchi-build-report-2026-11-08.ja.md
 - 11月9日 クロッチの改善記録 https://github.com/moruku36/home-ai-engineering-lab/blob/main/docs/kurotchi-improvements-2026-11-09.ja.md
 - 11月10日 ラウンジ復旧と Codex サブスク切替 https://github.com/moruku36/home-ai-engineering-lab/blob/47d3068d86db54499368602d6b3d28a7d3569e3b/docs/kurotchi-lounge-codex-cutover-2026-11-10.ja.md
+- NVIDIA NemoClaw（OpenShell） https://www.nvidia.com/en-us/ai/nemoclaw/

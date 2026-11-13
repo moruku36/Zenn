@@ -86,4 +86,3 @@ ChatGPT側のAIエージェントの提案で経路を変え、Codexのサブス
 - 11月8日 ホームラボとクロッチの構築レポート https://github.com/moruku36/home-ai-engineering-lab/blob/main/docs/home-lab-kurotchi-build-report-2026-11-08.ja.md
 - 11月9日 クロッチの改善記録 https://github.com/moruku36/home-ai-engineering-lab/blob/main/docs/kurotchi-improvements-2026-11-09.ja.md
 - 11月10日 ラウンジ復旧と Codex サブスク切替 https://github.com/moruku36/home-ai-engineering-lab/blob/47d3068d86db54499368602d6b3d28a7d3569e3b/docs/kurotchi-lounge-codex-cutover-2026-11-10.ja.md
-

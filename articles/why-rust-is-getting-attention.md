@@ -252,3 +252,4 @@ Rustを使うと、性能と安全性の両立を目指せます。Pythonと組�
 言語の根幹に関わるnever typeの安定化と、サプライチェーンの安全対策が、同じ節目のリリースに入りました。
 
 出典：[Announcing Rust 1.100.0](https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/)
+

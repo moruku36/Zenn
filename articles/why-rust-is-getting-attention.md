@@ -3,7 +3,7 @@ title: "なぜ今、Rustが注目されるのか：言語の歴史、Pythonと�
 emoji: "🦀"
 type: "tech"
 topics: ["rust", "python", "ai"]
-published: false
+published: true
 ---
 
 # なぜ今、Rustが注目されるのか：言語の歴史、Pythonとの関係、AI基盤の事例から

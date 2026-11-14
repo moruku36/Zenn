@@ -5,9 +5,10 @@ type: "tech"
 topics: ["gemini", "aiエージェント", "google", "antigravity"]
 published: false
 ---
-# Gemini 4 CarbonとHydrogenが来た週：AntigravityのOrchestratorと/swarmを整理する
 
 ![Gemini 4 Carbon](/images/gemini-4-carbon-hydrogen/header.png)
+
+# Gemini 4 CarbonとHydrogenが来た週：AntigravityのOrchestratorと/swarmを整理する
 
 ## 1. はじめに
 
@@ -76,6 +77,10 @@ Orchestratorの24%削減は、こうした消費を抑えるための仕組み�
 
 同じ週には、Geminiを搭載したアイウェアの予約も始まりました。Gentle Monster、Warby Parker、Samsungとのコレクションで、12月10日に発売されます。会話型の音声説明「Guided Vision」も発表されました。
 
+同じ週の11月11日には、文章を生成しない判断専用のGemini Decisions APIも発表されました。1つのマルチモーダル入力（最大256Kトークン）に対し、yes/no・選択・ルーブリックスコアの質問を最大1,000件まで1回の処理で評価し、確率と信頼度を返します。レイテンシはend-to-endで150〜250ms、価格は入力100万トークンあたり$0.10で出力トークンの課金はなく、AI Studioに無料枠があり、ツール選択やポリシーチェック、モデルルーティングといった判断だけを高速に切り出したい場面に向けたAPIです。
+
+同じく11月10日には、Google DeepMindで最も高性能なVLA（vision-language-action）モデル、Gemini Robotics 2.5も発表され、200を超えるタスクで評価されました。ApptronikのヒューマノイドApollo 2は、Mercedes-Benzの稼働中の生産ライン（ハンガリー・ケチケメート、ドイツ・ジンデルフィンゲン）で自動車部品のキッティングを実証し、成功率96%を記録しました（Google発表の概念実証値です）。開発の高速化にはGemini 4 Argonが使われており、現在はパートナー企業向けに展開中です。
+
 ## 参照
 
 ・Google「Gemini 4 Carbon is now available」 https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
@@ -85,3 +90,5 @@ Orchestratorの24%削減は、こうした消費を抑えるための仕組み�
 ・Google Antigravity「Choose a model」 https://antigravity.google/docs/models#orchestrator
 ・Google Antigravity「Dynamic Workflows (/run-workflow)」 https://antigravity.google/docs/dynamic-workflows
 ・Google「Intelligent eyewear collections with Gemini features」 https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/
+・Google「Gemini Decisions API: Fast multimodal decisions」 https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/
+・Google DeepMind「Gemini Robotics 2.5: Accelerating Physical Intelligence」 https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/

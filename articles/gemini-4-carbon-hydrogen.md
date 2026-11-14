@@ -13,18 +13,19 @@ published: false
 
 AIエージェントに重い作業を任せようとすると、賢いモデルは遅くて利用枠を消費し、速いモデルは肝心なところで詰まる、という場面によく出会います。
 
-Googleは2026年11月10日から12日にかけて、この問題への回答をまとめて出しました。最上位モデルGemini 4 Carbon、高速モデルGemini 4 Hydrogen、そして開発環境Antigravityの新機能/swarmとOrchestratorです。
+Googleは2026年11月10日から13日にかけて、この問題への回答をまとめて出しました。最上位モデルGemini 4 Carbon、高速モデルGemini 4 Hydrogen、そして開発環境Antigravityの新機能/swarmとOrchestratorです。
 
 9月にGemini 3.8 Flashが登場して以来、Googleのモデルは足踏みしている印象がありました。今週の発表でラインアップは一新されました。本記事では、Googleの公式ブログをもとに、今週の変更点と仕組みを整理します。
 
 ## 2. 主なアップデート
 
-今週の主な変更は次の5点です。
+今週の主な変更は次の6点です。
 
 ・**Gemini 4 Carbon**（11月10日）　Googleの最上位モデルです。長時間のエージェント作業、複雑なコーディングやデバッグ、科学的な推論が得意です。サブスクリプションではGoogle AI Ultraでのみ利用でき、APIは有料の開発者向けに提供されています
 ・**Gemini 4 Hydrogen**（11月12日）　Gemini 3.8 Flashの後継にあたる高速モデルです。日常的なコーディングとエージェントの実行を担い、思考の深さを4段階で切り替えられます。Google検索では全ユーザーが利用できます
 ・**/swarm**（11月10日、プレビュー）　Antigravityの機能で、1つの指示を複数のエージェントによるチーム作業に変えます。進み具合をリアルタイムで追えます
-・**Orchestrator**（11月12日）　Antigravityのモデル選択に追加された仕組みです。同じセッションの中でCarbonとHydrogenを動的に切り替えます。Ultra向けに提供されています
+・**Orchestrator**（11月12日）　Antigravityのモデル選択に追加された仕組みです。発表当初はUltra向けで、同じセッションの中でCarbonとHydrogenを動的に切り替えます。11月13日にはPro向けの提供も始まりました。Proでは計画役のArgonと実行役のHydrogenを組み合わせます。Carbonを使うOrchestratorはUltraのみです。
+・**Dynamic Workflows**（11月13日、/run-workflow）　エージェントが複数エージェントを束ねる短いPythonスクリプトを生成・実行する機能です。parallel()で並列、pipeline()で直列にフェーズを進めます
 ・**Antigravityの細かな更新**　フォントサイズの設定、プラグインの分割表示、ブラウザがファイルをダウンロードする前の承認、仕事の種類に合わせた画面レイアウトなどが追加されました。11日にはGoogle Cloudの認証情報でサインインした場合にもCarbonを選べるようになりました
 
 ## 3. 仕組み
@@ -39,7 +40,17 @@ Orchestratorは、1つのセッションの中で役割を分担する仕組み�
 
 最初にモデルを決めて固定する振り分け方式とは違い、作業の進み具合に合わせてモデルを行き来するのが特徴です。Googleの測定では、OrchestratorはベンチマークTerminal-BenchでCarbonに近い成功率を保ちながら、クオータの消費を平均24%減らし、完了までの時間を19%短縮しました。
 
+なお、発表当初はUltra向けでしたが、11月13日にはPro向けの提供も始まりました。Proでは計画役にArgonを使い、Hydrogenと組み合わせて動きます。
+
 ![Orchestratorの動き](/images/gemini-4-carbon-hydrogen/orchestrator.png)
+
+Dynamic Workflows（/run-workflow、11月13日）も同じ週に加わりました。/run-workflowを実行すると、エージェントが複数エージェントを束ねる短いPythonスクリプトを作ります。スクリプトは承認後に実行され、parallel()で並列、pipeline()で直列に処理を進めます。
+
+各エージェントは独立した会話で動き、JSONスキーマに沿った構造化結果を返すため、メイン会話のコンテキストは汚れません。エージェントごとにモデルや隔離ワークスペースを指定でき、スクリプトはファイルに保存して再実行できます。
+
+Orchestratorは1つの会話の中で計画と振り分けを行います。一方、Dynamic Workflowsはスクリプトで手順を制御する、予測可能な方法です。
+
+/swarmはエージェント同士が掲示板で協調します。Dynamic Workflowsは、同じチェックを複数のファイルやパッケージに繰り返し適用するような作業に向いています。
 
 ## 4. 筆者の見立て
 
@@ -63,9 +74,14 @@ Orchestratorの24%削減は、こうした消費を抑えるための仕組み�
 ・Antigravityには/swarmとOrchestratorが入り、司令塔と実行役を分けるマルチモデルの仕組みが標準で使えるようになった
 ・課題は消費量であり、モデルの使い分けの工夫が必要
 
+同じ週には、Geminiを搭載したアイウェアの予約も始まりました。Gentle Monster、Warby Parker、Samsungとのコレクションで、12月10日に発売されます。会話型の音声説明「Guided Vision」も発表されました。
+
 ## 参照
 
 ・Google「Gemini 4 Carbon is now available」 https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
 ・Google「Introducing Gemini 4 Hydrogen for Agentic Workflows」 https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
 ・Google Antigravity Blog「Gemini 4 Hydrogen and Orchestrator」 https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity
 ・Google Antigravity 公式変更履歴 https://antigravity.google/docs/changelog
+・Google Antigravity「Choose a model」 https://antigravity.google/docs/models#orchestrator
+・Google Antigravity「Dynamic Workflows (/run-workflow)」 https://antigravity.google/docs/dynamic-workflows
+・Google「Intelligent eyewear collections with Gemini features」 https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/
